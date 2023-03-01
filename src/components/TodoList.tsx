@@ -1,7 +1,7 @@
 import { useGlobalContext } from "./contexts/TodoContext"
 import TodoItem from "./TodoItem"
 
-const TodoList = () => {
+const TodoList: React.FC = () => {
   const { todos } = useGlobalContext()
 
   return (

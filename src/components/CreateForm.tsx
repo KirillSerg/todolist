@@ -9,6 +9,16 @@ const CreateForm: React.FC = () => {
 
   const { todos, setTodos } = useGlobalContext()
 
+  const handlerInputTitle = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(e.target.value)
+    setIsEmptyTitle(false)
+  }
+
+  const handlerInputDescription = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setDescription(e.target.value)
+    setIsEmptyDescription(false)
+  }
+
   const handlerCreateTodo = () => {
     if (title && description) {
       setTodos(todos.concat([{
@@ -38,7 +48,7 @@ const CreateForm: React.FC = () => {
         <input
           style={{ borderColor: isEmptyTitle ? "red" : "none" }}
           type="text" value={title}
-          onChange={(e) => { setTitle(e.target.value) }}
+          onChange={handlerInputTitle}
         />
         {isEmptyTitle && <label style={{ color: "red", display: "block" }}>This field is empty!</label>}
       </div>
@@ -48,7 +58,7 @@ const CreateForm: React.FC = () => {
         <input
           style={{ borderColor: isEmptyTitle ? "red" : "none" }}
           type="text" value={description}
-          onChange={(e) => { setDescription(e.target.value) }}
+          onChange={handlerInputDescription}
         />
         {isEmptyDescription && <label style={{ color: "red", display: "block" }}>This field is empty!</label>}
       </div>

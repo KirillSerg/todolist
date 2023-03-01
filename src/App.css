@@ -52,7 +52,7 @@
 }
 
 .modal__conteiner{
-  max-width: 50%;
+  width: 50%;
   box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
   padding: 0 25px 25px 25px;
   /* border-radius: 8px; */
